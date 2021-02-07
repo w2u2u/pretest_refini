@@ -1,0 +1,17 @@
+<div class="container">
+  <div>
+    <input
+      type="number"
+      [ngModel]="calNum"
+      (ngModelChange)="onCalNumChange($event)"
+      placeholder="enter number"
+    />
+  </div>
+  <div class="center">
+    <select (change)="onModeChange($event)">
+      <option value="prime" selected>isPrime</option>
+      <option value="fibo">isFibo</option>
+    </select>
+  </div>
+  <div>{{ result }}</div>
+</div>
