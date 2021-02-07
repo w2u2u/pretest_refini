@@ -1,28 +1,16 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CategoryService {
-  private categories: string[] = [
-    'Animals',
-    'Anime',
-    'Anti-Malware',
-    'Art & Design',
-    'Books',
-    'Business',
-    'Calendar',
-    'Cloud Storage & File Sharing',
-    'Continuous Integration',
-    'Cryptocurrency',
-    'Currency Exchange',
-    'Data Validation',
-    'Development',
-  ];
+  private serviceUrl = 'https://api.publicapis.org/categories';
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  getCategories(): string[] {
-    return this.categories;
+  getCategories(): Observable<string[]> {
+    return this.http.get<string[]>(this.serviceUrl);
   }
 }
