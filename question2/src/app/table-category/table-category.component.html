@@ -1,9 +1,13 @@
-<input placeholder="category filter" />
+<input
+  placeholder="category search"
+  [ngModel]="search"
+  (ngModelChange)="onSearch($event)"
+/>
 <table>
   <tr>
     <th>Category name</th>
   </tr>
-  <tr *ngFor="let category of categories">
+  <tr *ngFor="let category of filteredCategories">
     <td>{{ category }}</td>
   </tr>
 </table>
