@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { TableCategoryComponent } from './table-category/table-category.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TableCategoryComponent
   ],
   imports: [
     BrowserModule
